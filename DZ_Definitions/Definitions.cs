@@ -67,7 +67,7 @@ namespace Definitions
             {
                 "help", DeclareCommand((args) =>
                 {
-                    WriteLine("\nAvailable commands: ");
+                    Logger.Log("\nAvailable commands: ");
                     foreach(KeyValuePair<string, Info> kvp in Commands)
                     {
                         Logger.Log($"'{kvp.Key}' {kvp.Value.Description} ");

@@ -10,3 +10,5 @@ C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_ServerHandler\obj\Release\net6.0
 C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_ServerHandler\obj\Release\net6.0\DZ_ServerHandler.csproj.CopyComplete
 C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_ServerHandler\obj\Release\net6.0\DZ_ServerHandler.dll
 C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_ServerHandler\obj\Release\net6.0\DZ_ServerHandler.genruntimeconfig.cache
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_ServerHandler\bin\Release\net6.0\DZ_Definitions.dll
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_ServerHandler\obj\Release\net6.0\DZ_ServerHandler.csproj.AssemblyReference.cache

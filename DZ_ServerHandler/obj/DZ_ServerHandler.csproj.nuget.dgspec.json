@@ -4,6 +4,66 @@
     "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_ServerHandler\\DZ_ServerHandler.csproj": {}
   },
   "projects": {
+    "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\DZ_Definitions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\DZ_Definitions.csproj",
+        "projectName": "DZ_Definitions",
+        "projectPath": "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\DZ_Definitions.csproj",
+        "packagesPath": "C:\\Users\\gordy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\gordy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "WebSocketSharp-netstandard": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_ServerHandler\\DZ_ServerHandler.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +87,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\DZ_Definitions.csproj": {
+                "projectPath": "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\DZ_Definitions.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

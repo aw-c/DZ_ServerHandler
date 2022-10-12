@@ -5,6 +5,7 @@ namespace Definitions
 {
     public static class Default
     {
+        public static bool IsServer = false;
         public static WebSocket? ws;
         public interface WIN_APP_Logger
         {

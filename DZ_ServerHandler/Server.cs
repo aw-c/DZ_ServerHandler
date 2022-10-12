@@ -20,6 +20,8 @@ static class Server
     }
     static void Main()
     {
+        Definitions.Default.IsServer = true;
+
         while (true)
         {
             var wssv = new WebSocketServer("ws://127.0.0.1:3000");

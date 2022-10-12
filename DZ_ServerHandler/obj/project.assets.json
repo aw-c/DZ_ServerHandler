@@ -10,6 +10,19 @@
         "runtime": {
           "lib/netstandard2.0/websocket-sharp.dll": {}
         }
+      },
+      "DZ_Definitions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "WebSocketSharp-netstandard": "1.0.1"
+        },
+        "compile": {
+          "bin/placeholder/DZ_Definitions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DZ_Definitions.dll": {}
+        }
       }
     }
   },
@@ -30,10 +43,16 @@
         "websocketsharp-netstandard.1.0.1.nupkg.sha512",
         "websocketsharp-netstandard.nuspec"
       ]
+    },
+    "DZ_Definitions/1.0.0": {
+      "type": "project",
+      "path": "../DZ_Definitions/DZ_Definitions.csproj",
+      "msbuildProject": "../DZ_Definitions/DZ_Definitions.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "DZ_Definitions >= 1.0.0",
       "WebSocketSharp-netstandard >= 1.0.1"
     ]
   },
@@ -63,7 +82,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\DZ_Definitions.csproj": {
+              "projectPath": "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_Definitions\\DZ_Definitions.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

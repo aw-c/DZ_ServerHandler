@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "DZ_ServerHandler/1.0.0": {
         "dependencies": {
+          "DZ_Definitions": "1.0.0",
           "WebSocketSharp-netstandard": "1.0.1"
         },
         "runtime": {
@@ -20,6 +21,14 @@
             "assemblyVersion": "1.0.1.0",
             "fileVersion": "1.0.1.0"
           }
+        }
+      },
+      "DZ_Definitions/1.0.0": {
+        "dependencies": {
+          "WebSocketSharp-netstandard": "1.0.1"
+        },
+        "runtime": {
+          "DZ_Definitions.dll": {}
         }
       }
     }
@@ -36,6 +45,11 @@
       "sha512": "sha512-knoinAv31vbdxXdypnzN2MPX5hyntVLWceq6OdWRXkr9zzqp/RWbxSuLFGbkW8De1061URgNAN43BUTlgMx1CA==",
       "path": "websocketsharp-netstandard/1.0.1",
       "hashPath": "websocketsharp-netstandard.1.0.1.nupkg.sha512"
+    },
+    "DZ_Definitions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

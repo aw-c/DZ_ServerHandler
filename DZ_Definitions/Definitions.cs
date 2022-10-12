@@ -10,7 +10,7 @@ namespace Definitions
         {
             public void Write(string s);
         }
-        public static bool RunCommand(string cmd)
+        public static bool RunCommand(string cmd,string[]? args = null)
         {
             Info? t;
             Commands.TryGetValue(cmd,out t);
@@ -18,7 +18,7 @@ namespace Definitions
             if (t != null)
             {
                 if (t.Act != null)
-                    t.Act();
+                    t.Act(args);
                 return true;
             }
 
@@ -50,21 +50,21 @@ namespace Definitions
         }
         public class Info
         {
-            public Action Act;
-            public Action ServerAction;
+            public Action<string[]?> Act;
+            public Action<string[]?> ServerAction;
             public string Description;
 
-            public Info(Action act, string desc)
+            public Info(Action<string[]?> act, string desc)
             {
                 Act = act;
                 Description = desc;
             }
         }
-        public static Info DeclareCommand(Action? act, string desc) => new Info(act, desc);
+        public static Info DeclareCommand(Action<string[]?>? act, string desc) => new Info(act, desc);
         public static Dictionary<string, Info> Commands = new Dictionary<string, Info>()
         {
             {
-                "help", DeclareCommand(() =>
+                "help", DeclareCommand((args) =>
                 {
                     WriteLine("\nAvailable commands: ");
                     foreach(KeyValuePair<string, Info> kvp in Commands)
@@ -74,10 +74,14 @@ namespace Definitions
                 },"Command to get all commands")
             },
             {
-                "connect",DeclareCommand(() =>
+                "connect",DeclareCommand((args) =>
                 {
-                    Write("Enter the IP address: ");
-                    string? IP = ReadLine();
+                    string? IP = args?[0];
+                    if (IP == null)
+                    {
+                        Write("Enter the IP address: ");
+                        IP = ReadLine();
+                    }
 
                     WriteLine($"Connecting to {IP}...");
 

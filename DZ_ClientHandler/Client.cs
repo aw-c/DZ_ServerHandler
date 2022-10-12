@@ -10,7 +10,7 @@ static class Client
             switch (args[i])
             {
                 case "-i":
-                    RunCommand("connect");
+                    RunCommand("connect",new string[] { args[i+1]});
                     break;
             }
     }

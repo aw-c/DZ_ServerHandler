@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "i9HFtRPPq7KlWHtquwtdnUYmwu3ZCmlRL0efFOtsNK7XIwQe8GaE+2Kpf+uW64dDDEajQR5o896JvH4DAy0Unw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gordy\\source\\repos\\DZ_ServerHandler\\DZ_ServerHandler\\DZ_ServerHandler.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gordy\\.nuget\\packages\\websocketsharp-netstandard\\1.0.1\\websocketsharp-netstandard.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

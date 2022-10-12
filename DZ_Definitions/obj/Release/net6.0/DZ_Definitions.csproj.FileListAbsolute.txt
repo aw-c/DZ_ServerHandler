@@ -1,0 +1,8 @@
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\obj\Release\net6.0\DZ_Definitions.csproj.AssemblyReference.cache
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\obj\Release\net6.0\DZ_Definitions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\obj\Release\net6.0\DZ_Definitions.AssemblyInfoInputs.cache
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\obj\Release\net6.0\DZ_Definitions.AssemblyInfo.cs
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\obj\Release\net6.0\DZ_Definitions.csproj.CoreCompileInputs.cache
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\bin\Release\net6.0\DZ_Definitions.deps.json
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\bin\Release\net6.0\DZ_Definitions.dll
+C:\Users\gordy\source\repos\DZ_ServerHandler\DZ_Definitions\obj\Release\net6.0\DZ_Definitions.dll

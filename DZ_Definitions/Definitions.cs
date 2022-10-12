@@ -80,7 +80,7 @@ namespace Definitions
                     string? IP = args?[0];
                     if (IP == null)
                     {
-                        Write("Enter the IP address: ");
+                        Logger.Log("Enter the IP address: ",false);
                         IP = ReadLine();
                     }
 
@@ -94,12 +94,12 @@ namespace Definitions
 
                         ws.OnOpen += (sender,data) =>
                         {
-                            WriteLine($"Connected to {IP} succesfully");
+                            Logger.Log($"Connected to {IP} succesfully");
                         };
 
                         ws.OnMessage += (sender, data) =>
                         {
-                            WriteLine(data);
+                            Logger.Log(data);
                         };
                         ws.Connect();
                     }

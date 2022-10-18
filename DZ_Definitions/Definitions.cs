@@ -11,6 +11,10 @@ namespace Definitions
         {
             public void Write(string s);
         }
+        public static bool StringIsNull(string s)
+        {
+            return s == "" || s == null;
+        }
         public static bool RunCommand(string cmd,string[]? args = null)
         {
             Info? t;

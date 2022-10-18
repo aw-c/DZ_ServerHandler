@@ -6,6 +6,17 @@ namespace Definitions
     public static class FactionHandler
     {
         public static string FactionPath = "";
+        public static Dictionary<string, string>? NewTable
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+                UpdateTable(Serialize(value));
+            }
+        }
         public static Dictionary<string,string>? GetLastTable()
         {
             return Deserialize<Dictionary<string, string>>(FileHandler.Read(FactionPath));
@@ -28,6 +39,20 @@ namespace Definitions
                     s += $"{kvp.Key}    =    {kvp.Value}\n";
 
             return s;
+        }
+        public static void Remove(string SteamID)
+        {
+            var tbl = GetLastTable();
+            tbl?.Remove(SteamID);
+
+            NewTable = tbl;
+        }
+        public static void Set(string SteamID,string faction)
+        {
+            var tbl = GetLastTable();
+            tbl?.Add(SteamID, faction);
+
+            NewTable = tbl;
         }
     }
 }

@@ -8,10 +8,6 @@ namespace Definitions
         public static string FactionPath = "";
         public static Dictionary<string, string>? NewTable
         {
-            get
-            {
-                return null;
-            }
             set
             {
                 UpdateTable(Serialize(value));

@@ -99,7 +99,7 @@ namespace Definitions
 
                         ws.OnMessage += (sender, data) =>
                         {
-                            Logger.Log(data);
+                            Logger.Log(data?.ToString()) ;
                         };
                         ws.Connect();
                     }

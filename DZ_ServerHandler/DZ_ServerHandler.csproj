@@ -7,7 +7,12 @@
     <Nullable>enable</Nullable>
     <DebugType>none</DebugType>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <ApplicationIcon>rqr.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="rqr.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="WebSocketSharp-netstandard" Version="1.0.1" />

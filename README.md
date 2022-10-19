@@ -1,7 +1,7 @@
 # DZ_ServerHandler
 Штучка-хуючка для удалённого управления DayZ сервером.
 
-#Опционально серверу:
+# Опционально серверу:
 Создание bat файла с конфигурацией папок:
 start DZ_ServerHandler -missionPath /mpmissions/dayzOffline.chernarusplus/
 

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "DZ_ClientHandler": {
+      "commandName": "Project",
+      "commandLineArgs": "-ip 127.0.0.1:3000 -auth x634eqwtrd",
+      "hotReloadEnabled": true
+    }
+  }
+}

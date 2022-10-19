@@ -8,6 +8,21 @@ namespace Definitions
     {
         public class PrettyWS : WebSocketBehavior
         {
+            public bool IsAuthorized = false;
+            private string? _Name;
+            public string? Name 
+            { 
+                get
+                {
+                    if (_Name != null)
+                        return $"{ID} ({_Name})";
+                    return ID;
+                }
+                set
+                {
+                    _Name = value;
+                }
+            }
             public void PSend(string s)
             {
                 Send(s);
@@ -17,6 +32,9 @@ namespace Definitions
             string? param3 = null, string? param4 = null)
         =>  new string[] { param1, param2, param3, param4 };
         public static bool IsServer = false;
+        public static string CurrentFolder = "";
+        public static string? AuthKey;
+        public static Dictionary<string, string> AllowedKeys;
         public static WebSocket? ws;
         public interface WIN_APP_Logger
         {
@@ -127,6 +145,9 @@ namespace Definitions
                         ws.OnOpen += (sender,data) =>
                         {
                             Logger.Log($"Connected to {IP} succesfully");
+
+                            if (AuthKey != null)
+                                RunCommand("auth",StrArray(AuthKey));
                         };
 
                         ws.OnMessage += (sender, e) =>
@@ -191,6 +212,26 @@ namespace Definitions
             }),
             DeclareCommand("file_flush",null,"Command to write data to the specified file"),
             DeclareCommand("file_read",null,"Command to read data from the specified file"),
+            DeclareCommand("auth",(info,args) =>
+            {
+                var tbl = StrArray(info.CommandName,args?[0]);
+                if (tbl[1] == null)
+                {
+                    Logger.Log("Enter your auth key: ",false);
+                    tbl[1] = ReadLine();
+                }
+
+                ws?.Send(ArgsHandler.GetPerfectArgs(tbl));
+            },
+            "Command to autorize you",(ws,args) =>
+            {
+                if (AllowedKeys[args[1]] != null)
+                {
+                    ws.IsAuthorized = true;
+                    ws.Name = AllowedKeys[args[1]];
+                    ws.PSend("You've been successuflly authorized");
+                }
+            }),
 
         };
     }

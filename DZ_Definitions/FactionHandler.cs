@@ -16,11 +16,11 @@ namespace Definitions
         }
         public static Dictionary<string,string>? GetLastTable()
         {
-            return Deserialize<Dictionary<string, string>>(FileHandler.Read(Directory.GetCurrentDirectory()+FactionPath + "factions.json"));
+            return Deserialize<Dictionary<string, string>>(FileHandler.Read(Default.CurrentFolder+FactionPath));
         }
         public static void UpdateTable(string json)
         {
-            FileHandler.Write(FactionPath, json);
+            FileHandler.Write(Default.CurrentFolder + FactionPath, json);
         }
         public static string? GetFactionBySteamID(string SteamID)
         {

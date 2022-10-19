@@ -1,6 +1,7 @@
 ﻿using WebSocketSharp;
 using WebSocketSharp.Server;
 using static System.Console;
+using static System.Text.Json.JsonSerializer;
 using Definitions;
 
 static class Server
@@ -10,21 +11,31 @@ static class Server
         for (int i = 0; i < args.Length; i++)
             switch (args[i])
             {
-                case "-missionPath":
+                case "-factionPath":
                     FactionHandler.FactionPath = args[i + 1];
+                    break;
+                case "-allowedKeys":
+                    Default.AllowedKeys = Deserialize<Dictionary<string, string>>
+                        (FileHandler.Read(Default.CurrentFolder + args[i + 1]));
                     break;
             }
     }
-    class WSHandler : Default.PrettyWS
+    public class WSHandler : Default.PrettyWS
     {
-        string? LastCommand;
+        /*public string? LastCommand;*/
+
 
         protected override void OnMessage(MessageEventArgs e)
         {
             string argss = e.Data;
             string[] args = ArgsHandler.GetPerfectArgs(argss);
 
-            Default.Logger.Log($"{ID}'ve been sent '{argss}' #{argss.Length},{args.Length}");
+            Default.Logger.Log($"{Name}'ve been sent '{argss}' #{argss.Length},{args.Length}");
+
+            if (!IsAuthorized)
+                if (args[0] != "auth")
+                    return;
+
             Send($"Server received the '{args[0]}' command");
 
             try
@@ -32,23 +43,24 @@ static class Server
                 Default.Info info = Default.GetCommand(args[0]);
                 info.ServerAction(this,args);
 
-                Default.Logger.Log($"{ID} command: '{args[0]}' have been runed");
+                Default.Logger.Log($"{Name} command: '{args[0]}' have been runed");
             }
             catch (Exception ex)
             {
                 Default.Logger.Log($"On occurred error: {ex.Message}\n" +
-                    $"{ID} command: '{args[0]}' haven't been runed");
+                    $"{Name} command: '{args[0]}' haven't been runed");
                 Send($"Command '{args[0]}' didn't run. Arguments or elements are invalid.");
             }
         }
         protected override void OnOpen()
         {
-            WriteLine($"{ID}'ve been connected");
+            WriteLine($"{Name}'ve been connected");
         }
     }
     static void Main(string[] args)
     {
         Default.IsServer = true;
+        Default.CurrentFolder = Directory.GetCurrentDirectory();
 
         ProcessArgs(args);
 

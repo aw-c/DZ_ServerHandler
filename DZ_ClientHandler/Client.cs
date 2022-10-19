@@ -9,8 +9,11 @@ static class Client
         for (int i = 0; i < args.Length; i++)
             switch (args[i])
             {
-                case "-i":
+                case "-ip":
                     RunCommand("connect",StrArray(args[i + 1]));
+                    break;
+                case "-auth":
+                    AuthKey = args[i+1];
                     break;
             }
     }

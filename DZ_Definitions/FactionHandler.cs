@@ -1,5 +1,6 @@
 ﻿using static System.Text.Json.JsonSerializer;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Definitions
 {
@@ -15,7 +16,7 @@ namespace Definitions
         }
         public static Dictionary<string,string>? GetLastTable()
         {
-            return Deserialize<Dictionary<string, string>>(FileHandler.Read(FactionPath));
+            return Deserialize<Dictionary<string, string>>(FileHandler.Read(Directory.GetCurrentDirectory()+FactionPath + "factions.json"));
         }
         public static void UpdateTable(string json)
         {

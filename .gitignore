@@ -54,5 +54,6 @@ dkms.conf
 *.suo
 *.cache
 *.zip
+.vs/
 bin
 obj

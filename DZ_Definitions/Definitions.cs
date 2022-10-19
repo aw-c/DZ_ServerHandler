@@ -158,7 +158,7 @@ namespace Definitions
             DeclareCommand("faction_get_all",null,"Command to get all members and their membership in the factions"),
             DeclareCommand("faction_add",(info,args) => 
             {
-                var tbl = StrArray(info.CommandName,args?[0]);
+                var tbl = StrArray(info.CommandName,args?[0],args?[1]);
                 if (tbl[1] == null)
                 {
                     Logger.Log("Enter SteamID: ",false);
@@ -170,7 +170,10 @@ namespace Definitions
 
                 ws?.Send(ArgsHandler.GetPerfectArgs(tbl));
             },
-            "Command to add to the faction spawn specified SteamID"),
+            "Command to add to the faction spawn specified SteamID",(ws,args) =>
+            {
+                FactionHandler.Add(args[1],args[2]);
+            }),
             DeclareCommand("faction_remove",(info,args) =>
             {
                 var tbl = StrArray(info.CommandName,args?[0]);
@@ -182,7 +185,10 @@ namespace Definitions
                 
                 ws?.Send(ArgsHandler.GetPerfectArgs(tbl));
             },
-            "Command to remove from the faction spawn specified SteamID"),
+            "Command to remove from the faction spawn specified SteamID",(ws,args) =>
+            {
+                FactionHandler.Remove(args[1]);
+            }),
             DeclareCommand("file_flush",null,"Command to write data to the specified file"),
             DeclareCommand("file_read",null,"Command to read data from the specified file"),
 

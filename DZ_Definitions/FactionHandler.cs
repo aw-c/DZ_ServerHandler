@@ -44,7 +44,7 @@ namespace Definitions
 
             NewTable = tbl;
         }
-        public static void Set(string SteamID,string faction)
+        public static void Add(string SteamID,string faction)
         {
             var tbl = GetLastTable();
             tbl?.Add(SteamID, faction);
